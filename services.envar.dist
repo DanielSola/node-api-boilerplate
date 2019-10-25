@@ -1,0 +1,7 @@
+export NODE_ENV=development
+export PORT=5730
+export LOG=1
+export REGISTRY=test
+export TAG=latest
+export SECRET=apiSecret
+

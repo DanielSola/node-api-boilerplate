@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      target: $TARGET
+    environment:
+      PORT: $PORT
+      LOG: $LOG
+      SECRET: $SECRET
+    volumes:
+      - ./src:/app/src
+    ports:
+      - $PORT:$PORT
+
+networks:
+  default:
+    external:
+      name: development

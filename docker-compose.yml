@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  api:
+    image: ${REGISTRY}/api:${TAG}
+    container_name: api
+    build:
+      context: .
+      args:
+        NODE_ENV: $NODE_ENV
