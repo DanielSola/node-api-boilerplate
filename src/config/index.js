@@ -1,6 +1,6 @@
 const {
   LOG,
-  PORT = 8080,
+  PORT = 80,
   SECRET = 'apiSecret',
 } = process.env;
 

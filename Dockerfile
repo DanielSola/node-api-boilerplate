@@ -15,12 +15,13 @@ COPY src/ ${HOME}/src
 
 FROM dependencies AS development
 RUN npm install -g nodemon
-CMD nodemon --expose-gc src/index.js --exec ./node_modules/.bin/babel-node -L
+CMD nodemon src/index.js --exec ./node_modules/.bin/babel-node -L
 
 FROM dependencies AS builder
 RUN npm run build
 
 FROM base AS release
+EXPOSE 80
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prod_node_modules ./node_modules
 CMD npm run serve

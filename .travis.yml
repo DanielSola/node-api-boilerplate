@@ -8,5 +8,20 @@ sudo: required
 services:
   - docker
 
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "node-api-boilerplate"
+  env: "NodeApiBoilerplate-env"
+  bucket_name: "elasticbeanstalk-eu-west-3-909720093538"
+  bucket_path: "node-api-boilerplate"
+  on:
+    branch: master
+  access_key_id:
+    secure: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
+
 after_deploy:
   - echo "done deploying"

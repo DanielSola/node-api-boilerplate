@@ -31,7 +31,7 @@ app.get('/ping', (req, res) => {
 
 const start = async () => {
   app.listen(port, () => {
-    logger.info('Starting API REST');
+    logger.info('Starting API REST on port', port);
   });
 };
 
